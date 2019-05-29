@@ -1,13 +1,9 @@
 package com.cams.controller;
 
-import com.cams.dao.domain.Plcae;
-import com.cams.dao.domain.User;
 import com.cams.service.UserService;
-import com.cams.utils.Response;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/users")

@@ -1,6 +1,5 @@
 package com.cams.dao.mapper;
 
-import com.cams.dao.domain.Activity;
 import com.cams.dao.domain.Plcae;
 import com.cams.dao.domain.User;
 import org.apache.ibatis.annotations.Insert;
@@ -29,10 +28,8 @@ public interface PublicMapper  {
     @Select("select * from place ")
     List<Plcae> selectPlace();//地址查询
 
-    @Select("select * from activity where status=#{status} and coach=#{coach} and type=#{type}")
-        // ====无法做到单个属性查询，必须全部输入====
-    List<Activity> selectActivity(Activity activity);//活动查询
 
+    //更新信息必须输入属性【id，role，name，passowrd】
     @Update("update resident set name=#{name},gender=#{gender},identity_card=#{identityCard},phone=#{phone},email=#{email},intro=#{intro},img_path=#{imgPath},password=#{password} where id=#{id}")
     int updateResident(User user);//用户信息编译
 
@@ -44,5 +41,6 @@ public interface PublicMapper  {
 
     @Update("update admin set name=#{name},gender=#{gender},identity_card=#{identityCard},phone=#{phone},email=#{email},intro=#{intro},img_path=#{imgPath},password=#{password} where id=#{id}")
     int updateAdmin(User user);//管理员信息编译
+
 
 }

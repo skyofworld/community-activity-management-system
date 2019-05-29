@@ -1,6 +1,5 @@
 package com.cams.service.impl;
 
-import com.cams.dao.domain.Activity;
 import com.cams.dao.domain.Plcae;
 import com.cams.dao.domain.User;
 import com.cams.dao.mapper.PublicMapper;
@@ -43,13 +42,6 @@ public class PublicServiceimpl implements PublicService {
         else  return list;
     }
 
-    @Override
-    public List<Activity> selectActivity(Activity activity) {
-        List<Activity> list=null;
-        list=publicMapper.selectActivity(activity);
-        if (list.size()==0) return null;
-        else  return list;
-    }
 
     @Override
     public User updateUser(User user) {

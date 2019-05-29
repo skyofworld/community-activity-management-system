@@ -28,13 +28,6 @@ public class PublicController {
         else return Response.ok(list);
     }
 
-//    @GetMapping("/activities")
-//    public Response selectActivity(@RequestBody Activity activity) {
-//        List<Activity> list = null;
-//        list = publicService.selectActivity(activity);
-//        if (list == null) return Response.errorMsg("活动查询失败");
-//        else return Response.ok(list);
-//    }
 
     @PutMapping("/users")
     public Response updateUser(@RequestBody User user) {
