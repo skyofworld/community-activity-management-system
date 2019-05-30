@@ -185,3 +185,12 @@ CREATE TABLE IF NOT EXISTS `activity_resident`(
     FOREIGN KEY (`activity`) references `activity`(`id`),
     FOREIGN KEY (`resident`) references `resident`(`id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `message`(
+	`id` INT UNSIGNED AUTO_INCREMENT,
+    `author` INT UNSIGNED NOT NULL,
+    `content` LONGTEXT NOT NULL,
+	`update_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	`create_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
