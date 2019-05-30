@@ -1,8 +1,7 @@
 package com.cams.dao;
 
 import com.cams.BaseTest;
-import com.cams.dao.domain.User;
-import com.cams.dao.mapper.ResidentMapper;
+import com.cams.domain.User;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

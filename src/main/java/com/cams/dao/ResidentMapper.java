@@ -1,9 +1,8 @@
-package com.cams.dao.mapper;
+package com.cams.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.cams.dao.domain.Resident;
-import com.cams.dao.domain.User;
-import org.apache.ibatis.annotations.Mapper;
+import com.cams.domain.Resident;
+import com.cams.domain.User;
 import org.springframework.stereotype.Component;
 
 @Mapper

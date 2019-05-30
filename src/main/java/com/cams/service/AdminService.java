@@ -1,6 +1,7 @@
 package com.cams.service;
 
 import com.cams.dao.domain.*;
+import com.cams.domain.Resident;
 
 import java.util.List;
 
@@ -16,5 +17,7 @@ public interface AdminService {
 
     int throughActivity(int id,int status);//通过活动
 
-    int addPlace(String address,String intro,String img_path);//新建活动地点
+    int addPlace(Plcae plcae);//新建活动地点
+
+    int addPlaceType(ActivityType activityType);
 }

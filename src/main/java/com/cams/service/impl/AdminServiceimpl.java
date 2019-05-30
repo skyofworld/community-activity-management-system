@@ -2,6 +2,7 @@ package com.cams.service.impl;
 
 import com.cams.dao.domain.*;
 import com.cams.dao.mapper.AdminMapper;
+import com.cams.domain.Resident;
 import com.cams.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -54,9 +55,15 @@ public class AdminServiceimpl implements AdminService {
     }
 
     @Override
-    public int addPlace(String address, String intro, String img_path) {
-        int logo=adminMapper.addplace(address,intro,img_path);
+    public int addPlace(Plcae plcae) {
+        int logo=adminMapper.addplace(plcae);
         if (logo==1) return 1;
         else  return -1;
     }
+
+//    @Override
+//    public int addPlaceType(ActivityType activityType) {
+//        int logo=0;
+//        logo=adminMapper.addplacetype()
+//    }
 }

@@ -19,12 +19,13 @@ CREATE TABLE IF NOT EXISTS `admin`(
 		COMMENT '0：未知
 				 1：男
 				 2：女',
+	`openid` VARCHAR(32) UNIQUE,
     `identity_card` CHAR(18) UNIQUE,
 	`phone` VARCHAR(16) UNIQUE,
 	`email` VARCHAR(32) UNIQUE,
 	`img_path` VARCHAR(128),
 	`salt` VARCHAR(64),
-	`password` VARCHAR(64) 	NOT NULL,
+    `password` VARCHAR(64),
 	`update_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	`create_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY ( `id` )
@@ -45,13 +46,14 @@ CREATE TABLE IF NOT EXISTS `sponsor`(
 		COMMENT '0：未知
 				 1：男
 				 2：女',
+	`openid` VARCHAR(32) UNIQUE,
     `identity_card` CHAR(18) UNIQUE,
-    `phone` VARCHAR(16) UNIQUE,
-    `email` VARCHAR(32) UNIQUE,
+	`phone` VARCHAR(16) UNIQUE,
+	`email` VARCHAR(32) UNIQUE,
     `intro` VARCHAR(128),
 	`img_path` VARCHAR(128),
 	`salt` VARCHAR(64),
-    `password` VARCHAR(64) NOT NULL,
+    `password` VARCHAR(64),
 	`update_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	`create_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (`id`)
@@ -84,13 +86,14 @@ CREATE TABLE IF NOT EXISTS `resident`(
 		COMMENT '0：未知
 				 1：男
                  2：女',
+	`openid` VARCHAR(32) UNIQUE,
     `identity_card` CHAR(18) UNIQUE,
-    `phone` CHAR(16) UNIQUE,
-    `email` VARCHAR(32) UNIQUE,
+	`phone` VARCHAR(16) UNIQUE,
+	`email` VARCHAR(32) UNIQUE,
     `intro` VARCHAR(128),
 	`img_path` VARCHAR(128),
 	`salt` VARCHAR(64),
-    `password` VARCHAR(64) NOT NULL,
+    `password` VARCHAR(64),
 	`update_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	`create_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY (`id`)
@@ -113,13 +116,14 @@ CREATE TABLE IF NOT EXISTS `coach`(
 		COMMENT '0：未知
 				 1：男
                  2：女',
+	`openid` VARCHAR(32) UNIQUE,
     `identity_card` CHAR(18) UNIQUE,
-    `phone` CHAR(16) UNIQUE,
-    `email` VARCHAR(32) UNIQUE,
+	`phone` VARCHAR(16) UNIQUE,
+	`email` VARCHAR(32) UNIQUE,
     `intro` VARCHAR(128),
 	`img_path` VARCHAR(128),
 	`salt` VARCHAR(64),
-    `password` VARCHAR(64) NOT NULL,
+    `password` VARCHAR(64),
 	`update_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	`create_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY (`id`),
@@ -131,12 +135,11 @@ CREATE TABLE IF NOT EXISTS `place`(
     `address` VARCHAR(64) NOT NULL UNIQUE,
     `intro` VARCHAR(128),
 	`img_path` VARCHAR(128),
+	`number` INT UNSIGNED DEFAULT 0,
 	`update_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	`create_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY (`id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
 
 CREATE TABLE IF NOT EXISTS `activity`(
 	`id` INT UNSIGNED AUTO_INCREMENT,

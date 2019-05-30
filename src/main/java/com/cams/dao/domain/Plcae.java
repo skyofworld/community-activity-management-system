@@ -5,6 +5,7 @@ public class Plcae {
     private  String address;
     private String intro;
     private  String img_path;
+    private  int num;
 
     public int getId() {
         return id;
@@ -36,5 +37,13 @@ public class Plcae {
 
     public void setImg_path(String img_path) {
         this.img_path = img_path;
+    }
+
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
     }
 }

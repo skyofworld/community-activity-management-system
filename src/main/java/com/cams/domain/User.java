@@ -1,7 +1,6 @@
-package com.cams.dao.domain;
+package com.cams.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Data;
 
 import java.util.Date;
 
@@ -13,6 +12,7 @@ public class User {
     private Integer status;
     private Integer role;
     private Integer gender;
+    private String openid;
     private String identityCard;
     private String phone;
     private String email;
@@ -65,6 +65,14 @@ public class User {
 
     public String getIdentityCard() {
         return identityCard;
+    }
+
+    public String getOpenid() {
+        return openid;
+    }
+
+    public void setOpenid(String openid) {
+        this.openid = openid;
     }
 
     public void setIdentityCard(String identityCard) {

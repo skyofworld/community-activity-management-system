@@ -1,9 +1,7 @@
 package com.cams.dao.mapper;
 
-import com.cams.dao.domain.Admin;
-import com.cams.dao.domain.Coach;
-import com.cams.dao.domain.Resident;
-import com.cams.dao.domain.Sponsor;
+import com.cams.dao.domain.*;
+import com.cams.domain.Resident;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -31,10 +29,12 @@ public interface AdminMapper {
     @Update("update activity set status=#{status} where id=#{id}")
     int throughActivity(int id,int status);
 
-//    新建活动地点
-    @Insert("insert into place (address,intro,img_path) values(#{address},#{intro},#{img_path})")
-    int addplace(String address,String intro,String img_path);
+   //新建活动地点
+    @Insert("insert into place (address,intro,img_path,num) values(#{address},#{intro},#{img_path},#{num)")
+    int addplace(Plcae plcae);
 
-//    int addplacetype(At)
+    //新建活动类型
+    @Insert(("insert into activity_type (name,credit,intro,img_path)values(#{name),#{credit},#{intro},#{imgPath}"))
+    int addplacetype(ActivityType activityType);
 
 }

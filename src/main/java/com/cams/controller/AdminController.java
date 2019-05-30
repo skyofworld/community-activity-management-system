@@ -1,6 +1,8 @@
 package com.cams.controller;
 
 import com.cams.dao.domain.*;
+import com.cams.domain.Resident;
+import com.cams.domain.User;
 import com.cams.service.AdminService;
 import com.cams.utils.Response;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,11 +55,8 @@ public class AdminController {
 
     @PostMapping("/place")//新建活动地点
     public Response addPlace(@RequestBody Plcae plcae){
-        String address=plcae.getAddress();
-        String intro=plcae.getIntro();
-        String imag_path=plcae.getImg_path();
         int logo=0;
-        logo=adminService.addPlace(address,intro,imag_path);
+        logo=adminService.addPlace(plcae);
         if (logo==1) return Response.ok("新建地点成功");
         else  return Response.errorMsg("新建地点失败");
     }
