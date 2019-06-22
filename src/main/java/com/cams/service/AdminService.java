@@ -2,6 +2,7 @@ package com.cams.service;
 
 import com.cams.dao.domain.*;
 import com.cams.domain.Resident;
+import com.cams.domain.User;
 
 import java.util.List;
 
@@ -20,4 +21,8 @@ public interface AdminService {
     int addPlace(Plcae plcae);//新建活动地点
 
     int addPlaceType(ActivityType activityType);
+
+    List<Message> getMessages();//获得信息
+
+    User updateStste(User user);//更改用户状态
 }

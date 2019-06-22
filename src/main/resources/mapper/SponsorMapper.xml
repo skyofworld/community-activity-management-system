@@ -2,13 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--namespace该是ResidentMapper的完整限定名-->
 <mapper namespace="com.cams.dao.mapper.SponsorMapper">
-    <insert id="insertActivity" parameterType="Activity" useGeneratedKeys="true" keyProperty="id">
+    <insert id="insertActivity" parameterType="com.cams.dao.domain.Activity" useGeneratedKeys="true" keyProperty="id">
         insert into  activity
         ( name,status,number ,start_Time,end_Time,intro,type,sponsor,coach,place)
         values
         (#{name},#{status},#{number },#{startTime},#{endTime},#{intro},#{type},#{sponsor},#{coach},#{place});
     </insert>
-    <update id="updateActivity"  parameterType="Activity" useGeneratedKeys="true" keyProperty="id">
+    <update id="updateActivity"  parameterType="com.cams.dao.domain.Activity" useGeneratedKeys="true" keyProperty="id">
         update  activity
         <trim prefix="set" suffixOverrides=",">
         <if test="name!=null">name=#{name},</if>

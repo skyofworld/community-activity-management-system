@@ -43,8 +43,9 @@ public class SponsorController {
     }
 
     @DeleteMapping("")
-    public Response deleteActivity(int id){
+    public Response deleteActivity(@RequestBody Activity activity){
         int log=0;
+        int id=activity.getId();
         log=sponsorService.deleteActivity(id);
         System.out.println(log);
         if (log==1)

@@ -1,17 +1,18 @@
 package com.cams.controller;
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 import com.cams.service.UserService;
-=======
+//=======
 import com.cams.domain.User;
 import com.cams.domain.WXSession;
 import com.cams.service.RedisHelper;
-import com.cams.service.UserService;
+//import com.cams.service.UserService;
 import com.cams.utils.HttpClient;
 import com.cams.utils.Response;
 import com.fasterxml.jackson.databind.ObjectMapper;
->>>>>>> 032ddff9d1a14ee5081f03b759bf56bca23ad696
+//>>>>>>> 032ddff9d1a14ee5081f03b759bf56bca23ad696
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

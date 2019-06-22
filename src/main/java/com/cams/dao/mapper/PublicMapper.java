@@ -1,7 +1,9 @@
 package com.cams.dao.mapper;
 
+import com.cams.dao.domain.ActivityType;
+import com.cams.dao.domain.Message;
 import com.cams.dao.domain.Plcae;
-import com.cams.dao.domain.User;
+import com.cams.domain.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -41,6 +43,16 @@ public interface PublicMapper  {
 
     @Update("update admin set name=#{name},gender=#{gender},identity_card=#{identityCard},phone=#{phone},email=#{email},intro=#{intro},img_path=#{imgPath},password=#{password} where id=#{id}")
     int updateAdmin(User user);//管理员信息编译
+
+
+    @Select("select * from activity_type where name=#{name}and credit=#{credit}")
+    List<ActivityType> selectActivitytype(ActivityType activityType);//获取活动类型
+
+    @Insert("insert into message (author,content)values(#{author},#{content})")
+    int adddMessage(Message message);
+
+
+
 
 
 }

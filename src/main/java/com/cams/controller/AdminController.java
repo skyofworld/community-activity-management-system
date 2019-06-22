@@ -11,12 +11,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/admin")
 public class AdminController {
     @Autowired
     AdminService adminService;
 
-    @GetMapping("")
+    @GetMapping("/users")
     public Response selectUser(@RequestBody User user){
         int role=user.getRole();
         if (role==1){
@@ -44,7 +43,7 @@ public class AdminController {
 
 
     }
-    @PutMapping("")//更新活动信息
+    @PutMapping("/places")//更新活动信息
     public  Response througtActivity(@RequestBody Activity activity){
         int id=activity.getId();
         int status=activity.getStatus();
@@ -53,13 +52,38 @@ public class AdminController {
         else return Response.errorMsg("更新失败");
     }
 
-    @PostMapping("/place")//新建活动地点
+    @PostMapping("/places")//新建活动地点
     public Response addPlace(@RequestBody Plcae plcae){
         int logo=0;
         logo=adminService.addPlace(plcae);
         if (logo==1) return Response.ok("新建地点成功");
         else  return Response.errorMsg("新建地点失败");
     }
+
+    @PostMapping("/activity-type")
+    public  Response addPlaceType(@RequestBody ActivityType activityType){
+        int logo=0;
+        logo=adminService.addPlaceType(activityType);
+        if (logo==1) return Response.ok("活动类型新建成功");
+        else  return  Response.errorMsg("活动类型新建失败");
+
+    }
+    @GetMapping("/messages")//获取留言
+    @ResponseBody
+     public Response getMessages(){
+         List<Message> list=adminService.getMessages();
+         if (list!=null) return Response.ok(list);
+         else return Response.errorMsg("无留言");
+     }
+
+     @PutMapping("/user")//改变账号状态
+     public  Response updateState(@RequestBody User user){
+        User user1;
+        user1=adminService.updateStste(user);
+        if (user1!=null) return Response.ok(user1);
+        else return Response.errorMsg("更改失败");
+     }
+
 
 
 }
