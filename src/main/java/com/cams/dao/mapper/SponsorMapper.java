@@ -1,6 +1,5 @@
-package com.cams.dao.mapper;
+package com.cams.dao;
 
-//import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.toolkit.Constants;
